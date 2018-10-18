@@ -48,7 +48,7 @@ int main(){
 	int x,y,level;
 	// get the positions of the places
 	for (int i = 0; i < N; i++){
-		cin>>x>>y>>level;
+		cin>>level>>x>>y;
 		positions[i] = tuple<double,double,int>(x,y,level);
 	}
 	// figure out the edges between the places
@@ -86,12 +86,13 @@ int main(){
 
 		}
 		toPrint.push(curr);
+		cout << endl;
 		while(!toPrint.empty()){
-			cout<<toPrint.top();
+			cout<<toPrint.top() << " ";
 			toPrint.pop();
 		}
-		cout<<"\n";
 	}
+	cout << endl;
 	return 0;
 }
 pair<double,double> findEdge(int from, int to,string mode){
